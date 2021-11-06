@@ -12,7 +12,12 @@ public class SimpleNavMeshController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (_camera == null)
+        {
+            _camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        }
+
+        _agent = this.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
