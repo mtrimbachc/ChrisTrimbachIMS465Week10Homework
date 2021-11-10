@@ -38,13 +38,16 @@ public class SimpleNavMeshController : MonoBehaviour
             }
         }
 
-        if (_agent.remainingDistance > _agent.stoppingDistance)
+        if (character != null)
         {
-            character.Move(_agent.desiredVelocity, false, false);
-        } 
-        else
-        {
-            character.Move(Vector3.zero, false, false);
+            if (_agent.remainingDistance > _agent.stoppingDistance)
+            {
+                character.Move(_agent.desiredVelocity, false, false);
+            }
+            else
+            {
+                character.Move(Vector3.zero, false, false);
+            }
         }
     }
 }
